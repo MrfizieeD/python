@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ["3.7", "3.8", "3.10", "3.11"]
+        python-version: ["3.8", "3.10", "3.11", "3.12"]
         include:
           - python-version: "3.9"
             use_coverage: 'coverage'
@@ -44,7 +44,7 @@ jobs:
 
     - name: Upload coverage to Codecov
       if: "matrix.use_coverage"
-      uses: codecov/codecov-action@v4
+      uses: codecov/codecov-action@v5
       with:
         fail_ci_if_error: false
         verbose: true
